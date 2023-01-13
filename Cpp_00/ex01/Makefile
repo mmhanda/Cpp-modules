@@ -16,14 +16,15 @@ OBJF = $(SRC:.cpp=.o)
 
 NAME = phonebook
 
-CLANG = clang++ -std=98
+CLANG = c++ -std=c++98
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-all : $(NAME)
 
 $(NAME) : $(OBJF)
 		$(CLANG) $(FLAGS)  $(OBJF) -o $(NAME)
+
+all : $(NAME)
 
 clean :
 		rm -f $(OBJF)

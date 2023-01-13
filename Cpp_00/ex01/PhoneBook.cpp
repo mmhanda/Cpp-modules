@@ -3,54 +3,68 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 04:06:07 by mhanda            #+#    #+#             */
-/*   Updated: 2022/12/31 02:26:48 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/13 17:19:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() {
-    
-}
-
-void PhoneBook::prompt() {
-    std::string cmd;
-    while (1)
-    {
-        std::cout << "phone_book >> ";
-        std::getline(std::cin, cmd);
-        std::cout << cmd << std::endl;
-        if(cmd == "ADD")
-            take_contact_info();
-    }
-}
-
-commands PhoneBook::parse(const std::string &cmd) {
-    
-}
+// void PhoneBook::prompt() {
+//     std::string cmd;
+//     while (1)
+//     {
+//         std::cout << "phone_book >> ";
+//         std::getline(std::cin, cmd);
+//         std::cout << cmd << std::endl;
+//         if(cmd == "ADD")
+//             take_contact_info();
+//     }
+// }
 
 
-void take_contact_info()
+// void take_contact_info()
+// {
+//     std::cout << "first name" << std::endl;
+//     // std::cin >> `
+//     exit(0);
+// }
+
+
+
+void    check_command(std::string command)
 {
-    std::cout << "first name" << std::endl;
-    // std::cin >> `
-    exit(0);
+    if (command == "ADD")
+    {
+        std::cout << "ADD" << "\n";
+    }
+    else if (command == "SEARCH")
+    {
+        std::cout << "SEARCH" << "\n";
+    }
+    else if (command == "EXIT")
+        exit(0);
 }
 
 int main()
 {
-    PhoneBook phonebook;
-
-    phonebook.prompt();
-}
-
-
-int main(int ac, char **av)
-{
-    std::cout << num1::test << std::endl;
+    std::string cmd;
+    bool bok = true;
+    // std::cin >> cmd;
+    while (bok && std::getline(std::cin, cmd))
+    {
+        if(!cmd.compare("ADD"))
+            std::cout << "ADD" << "\n";
+        // if(!cmd.compare("SEARCH"))
+        if(!cmd.compare("EXIT"))
+        {
+            std::cout << "exiting" << "\n";
+            bok = false;
+        }
+        // check_command(cmd);
+    }
     // Pubg print;
     // test print1;
     // print.prin_sream();
