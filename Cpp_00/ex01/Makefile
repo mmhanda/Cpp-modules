@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/20 03:33:32 by mhanda            #+#    #+#              #
-#    Updated: 2022/12/31 02:28:40 by mhanda           ###   ########.fr        #
+#    Updated: 2023/01/14 23:00:16 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,6 @@ all : $(NAME)
 
 clean :
 		rm -f $(OBJF)
-fclean :
+fclean : clean
 		rm -f $(NAME)
 re : fclean all
