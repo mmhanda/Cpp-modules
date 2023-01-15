@@ -6,7 +6,7 @@
 #    By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/20 03:33:32 by mhanda            #+#    #+#              #
-#    Updated: 2023/01/15 06:00:34 by mhanda           ###   ########.fr        #
+#    Updated: 2023/01/15 07:38:30 by mhanda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJF = $(SRC:.cpp=.o)
 
 NAME = phonebook
 
-CLANG = c++ -std=c++98
+CLANG = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
