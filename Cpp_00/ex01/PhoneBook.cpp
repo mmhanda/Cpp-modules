@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 04:06:07 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/15 05:12:31 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/15 06:32:20 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,39 @@ int main()
 	bool bok = true;
 	PhoneBook phone;
 	int i = 0;
-	int field = 0;
+	int cont = 0;
+	int rem = 0;
 	std::cout << "The program only accepts\n ADD | SEARCH | EXIT" << "\n";
 	while (bok && std::getline(std::cin, cmd))
 	{
 		if(!cmd.compare("ADD"))
+		{
 			add_contac(i, &phone);
-		// if (!cmd.compare("SEARCH"))
-		// {
-			
-		// }
+			i ++;
+		}
+		if (!cmd.compare("SEARCH"))
+		{
+			while (rem < i)
+			{
+				std::string first_name = phone.contac[rem].getData("first_name");
+				if (first_name.length() > 10)
+				{
+				  	first_name = first_name.substr(0, 9);
+					first_name = first_name.append(".");
+				}
+				std::string last_name = phone.contac[rem].getData("last_name");
+				std::string nickname = phone.contac[rem].getData("nickname");
+				std::cout <<"|         " << rem << "|         " << first_name
+					<< "|        " << last_name << "|         " << nickname << "|\n";
+				// if (rem < i)
+				// {
+					
+				// }
+				// cont ++;
+				rem ++;
+			}
+			rem = 0;
+		}
 		if (i == 8)
 			i = 0;
 		if(!cmd.compare("EXIT"))
