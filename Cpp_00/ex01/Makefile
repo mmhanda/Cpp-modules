@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/20 03:33:32 by mhanda            #+#    #+#              #
-#    Updated: 2023/01/14 23:00:16 by marvin           ###   ########.fr        #
+#    Updated: 2023/01/15 00:08:30 by mhanda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CLANG = c++ -std=c++98
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 
-$(NAME) : $(OBJF)
+$(NAME) : $(OBJF) Contact.hpp PhoneBook.hpp
 		$(CLANG) $(FLAGS)  $(OBJF) -o $(NAME)
 
 all : $(NAME)

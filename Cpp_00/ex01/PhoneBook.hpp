@@ -6,24 +6,21 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 14:33:29 by mhanda            #+#    #+#             */
-/*   Updated: 2022/12/31 02:30:05 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/15 03:51:42 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
 #include <iostream>
 #include <string>
-
-class Contact
-{
-
-};
+#include "Contact.hpp"
 
 class PhoneBook
 {
-    Contact cont[7];
+    public:
+        Contact contac[8];
 };
 
 #endif
