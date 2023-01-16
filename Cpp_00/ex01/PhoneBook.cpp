@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 04:06:07 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/16 06:18:03 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/16 08:34:16 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void display_contacts(int rem, PhoneBook *phone)
 	if (last_name.length() > 10)
 	{
 		last_name = last_name.substr(0, 9);
-		last_name = last_name.append(".");
+		last_name = last_name.append(".");	
 	}
 	else 
 	{
