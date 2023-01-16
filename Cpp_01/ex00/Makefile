@@ -5,22 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/20 03:33:32 by mhanda            #+#    #+#              #
-#    Updated: 2023/01/16 10:34:56 by mhanda           ###   ########.fr        #
+#    Created: 2023/01/16 10:43:25 by mhanda            #+#    #+#              #
+#    Updated: 2023/01/16 11:09:17 by mhanda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Contact.cpp PhoneBook.cpp
+SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp ZombieEvent.cpp
 
 OBJF = $(SRC:.cpp=.o)
 
-NAME = phonebook
+NAME = zombie
 
 CLANG = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-$(NAME) : $(OBJF) PhoneBook.hpp Contact.hpp
+$(NAME) : $(OBJF) Zombie.hpp
 		$(CLANG) $(FLAGS)  $(OBJF) -o $(NAME)
 
 %.o: %.cpp
