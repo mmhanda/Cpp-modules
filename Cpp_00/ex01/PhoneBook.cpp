@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 04:06:07 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/15 09:00:09 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/16 06:18:03 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,39 +17,58 @@ void add_contac(int i, PhoneBook *phone)
 {
 	std::string seter;
 
-	std::cout << "Enter the first name\n";
-	std::getline(std::cin, seter);
-	if (std::cin.eof()) {
-		std::cout << "EOF detected, exiting program" << std::endl;
-		exit(0);
+	while(seter.empty())
+	{
+		std::cout << "Enter the first name\n";
+		std::getline(std::cin, seter);
+		if (std::cin.eof()) {
+			std::cout << "EOF detected, exiting program" << std::endl;
+			exit(0);
+		}
 	}
 	phone->contac[i].setData(seter , "first_name");
-	std::cout << "Enter the last name\n";
-	std::getline(std::cin, seter);
-	if (std::cin.eof()) {
-		std::cout << "EOF detected, exiting program" << std::endl;
-		exit(0);
+	seter.clear();
+	while(seter.empty())
+	{
+		std::cout << "Enter the last name\n";
+		std::getline(std::cin, seter);
+		if (std::cin.eof()) {
+			std::cout << "EOF detected, exiting program" << std::endl;
+			exit(0);
+		}
 	}
-	phone->contac[i].setData(seter , "last_name");
-	std::cout << "Enter the nickname\n";
-	std::getline(std::cin, seter);
-	if (std::cin.eof()) {
-		std::cout << "EOF detected, exiting program" << std::endl;
-		exit(0);
+	phone->contac[i].setData(seter , "last_name");	
+	seter.clear();
+	while(seter.empty())
+	{
+		std::cout << "Enter the nickname\n";
+		std::getline(std::cin, seter);
+		if (std::cin.eof()) {
+			std::cout << "EOF detected, exiting program" << std::endl;
+			exit(0);
+		}
 	}
 	phone->contac[i].setData(seter , "nickname");
-	std::cout << "Enter the phone number\n";
-	std::getline(std::cin, seter);
-	if (std::cin.eof()) {
-		std::cout << "EOF detected, exiting program" << std::endl;
-		exit(0);
+	seter.clear();
+	while(seter.empty())
+	{
+		std::cout << "Enter the phone number\n";
+		std::getline(std::cin, seter);
+		if (std::cin.eof()) {
+			std::cout << "EOF detected, exiting program" << std::endl;
+			exit(0);
+		}
 	}
-	phone->contac[i].setData(seter , "phonenumber");
-	std::cout << "Enter the darkest secret\n";
-	std::getline(std::cin, seter);
-	if (std::cin.eof()) {
-		std::cout << "EOF detected, exiting program" << std::endl;
-		exit(0);
+	phone->contac[i].setData(seter , "phone_number");
+	seter.clear();
+	while(seter.empty())
+	{
+		std::cout << "Enter the darkest secret\n";
+		std::getline(std::cin, seter);
+		if (std::cin.eof()) {
+			std::cout << "EOF detected, exiting program" << std::endl;
+			exit(0);
+		}
 	}
 	phone->contac[i].setData(seter , "darkest_secret");
 }
@@ -119,13 +138,18 @@ int main()
 {
 	std::string cmd;
 	PhoneBook phone;
+
 	int i = 0;
 	int rem = 0;
 	std::cout << "\tThe program only accepts\n\t ADD | SEARCH | EXIT" << "\n";
+	std::cout << "Enter your command ~> ";
 	while (std::getline(std::cin, cmd))
 	{
 		if (std::cin.eof())
-			break;
+		{
+			std::cout << "EOF detected, exiting program" << std::endl;
+			exit(0);
+		}
 		if(!cmd.compare("ADD"))
 		{
 			add_contac(i, &phone);
@@ -151,6 +175,7 @@ int main()
 			i = 0;
 		if(!cmd.compare("EXIT"))
 			break;
+		std::cout << "Enter your command ~> ";
 	}
 	return(0);
 }
