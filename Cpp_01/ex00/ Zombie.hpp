@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*    Zombie.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/20 03:33:38 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/16 05:16:21 by mhanda           ###   ########.fr       */
+/*   Created: 2023/01/15 10:18:18 by mhanda            #+#    #+#             */
+/*   Updated: 2023/01/15 11:02:26 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include <cmath>
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-int main(int ac, char **av)
+class  Zombie
 {
-	int i = 1;
-	
-	int j;
-	std::string No_arg = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+    private:
+        /* data */
+    public:
+        Zombie(){
+            std::
+        }
+    
+};
 
-	if (ac == 1)
-	{
-		std::cout << No_arg << "\n";
-		return(0);
-	}
-	j = 0;
-	while (av[i])
-	{
-		while(av[i][j])
-		{
-			std::cout << (char) toupper(av[i][j]);
-			j ++;
-		}
-		j = 0;
-		i ++;
-	}
-	std::cout << "\n";
-	return(0);
+ Zombie:: Zombie(/* args */)
+{
 }
+
+ Zombie::~ Zombie()
+{
+}
+
+
+
+#endif
