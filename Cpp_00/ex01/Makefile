@@ -6,11 +6,11 @@
 #    By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/20 03:33:32 by mhanda            #+#    #+#              #
-#    Updated: 2023/01/16 05:22:09 by mhanda           ###   ########.fr        #
+#    Updated: 2023/01/16 09:45:41 by mhanda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = PhoneBook.cpp
+SRC = main.cpp Contact.cpp PhoneBook.cpp
 
 OBJF = $(SRC:.cpp=.o)
 
@@ -20,7 +20,7 @@ CLANG = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-$(NAME) : $(OBJF) Contact.hpp PhoneBook.hpp
+$(NAME) : $(OBJF) PhoneBook.hpp Contact.hpp
 		$(CLANG) $(FLAGS)  $(OBJF) -o $(NAME)
 
 %.o: %.cpp
