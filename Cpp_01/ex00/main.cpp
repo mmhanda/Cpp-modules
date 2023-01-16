@@ -6,7 +6,15 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 10:17:48 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/15 10:17:49 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/16 12:03:28 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
+
+int main()
+{
+    Zombie *zombie = new Zombie();
+    delete zombie;
+    return 0;
+}
