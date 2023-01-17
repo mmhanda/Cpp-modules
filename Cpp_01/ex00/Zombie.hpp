@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 10:18:18 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/16 12:03:47 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/17 04:21:56 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class  Zombie
     private:
         std::string name;
     public:
-        Zombie(){
-            std::cout << "Zombie created" << std::endl;
-        }
+        void announce(void);
 };
 
+Zombie* newZombie( std::string name );
+void randomChump( std::string name );
 //  Zombie:: Zombie(/* args */)
 // {
 // }

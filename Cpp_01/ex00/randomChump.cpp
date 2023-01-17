@@ -6,7 +6,13 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 10:19:51 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/15 10:19:52 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/17 04:14:43 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
+
+void randomChump( std::string name )
+{
+    
+}

@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 10:17:48 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/16 12:03:28 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/17 03:43:06 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-    Zombie *zombie = new Zombie();
-    delete zombie;
+    Zombie *zombie = new Zombie;
+    zombie->announce("zabuza");
     return 0;
 }

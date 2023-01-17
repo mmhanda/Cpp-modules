@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 04:06:07 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/16 09:10:18 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/17 04:39:04 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void add_contac(int i, PhoneBook *phone)
 			exit(0);
 		}
 	}
-	phone->contac[i].setData(seter , "phone_number");
+	phone->contac[i].setData(seter , "phonenumber");
 	seter.clear();
 	while(seter.empty())
 	{
