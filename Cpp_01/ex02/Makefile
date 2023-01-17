@@ -6,21 +6,21 @@
 #    By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 10:43:25 by mhanda            #+#    #+#              #
-#    Updated: 2023/01/17 12:25:04 by mhanda           ###   ########.fr        #
+#    Updated: 2023/01/17 13:01:00 by mhanda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC = main.cpp 
 
 OBJF = $(SRC:.cpp=.o)
 
-NAME = zombie
+NAME = brains
 
 CLANG = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-$(NAME) : $(OBJF) Zombie.hpp
+$(NAME) : $(OBJF)
 		$(CLANG) $(FLAGS)  $(OBJF) -o $(NAME)
 
 %.o: %.cpp

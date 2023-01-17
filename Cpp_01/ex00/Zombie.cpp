@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 10:18:33 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/17 04:30:23 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/17 11:08:25 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void Zombie::announce()
 {
-    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-
-int main()
+Zombie::Zombie(std::string name)
 {
-    Zombie obj;
-    obj.announce();
+    this->name = name;
+}
+
+Zombie::~Zombie()
+{
+    std::cout << this->name << " has been destroyed" << std::endl;
 }

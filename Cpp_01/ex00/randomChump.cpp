@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 10:19:51 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/17 04:14:43 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/17 11:32:11 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void randomChump( std::string name )
 {
-    
+    Zombie zombie(name);
+    zombie.announce();
 }
