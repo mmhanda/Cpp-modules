@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:43:19 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/18 03:29:33 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/18 09:35:22 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-    int N = 10;
+    int N = -1;
     Zombie *zombies = zombieHorde(N, "zambi");
     delete[] zombies;
     return (0);

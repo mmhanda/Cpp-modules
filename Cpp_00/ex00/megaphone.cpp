@@ -6,13 +6,12 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 03:33:38 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/18 05:57:03 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/18 08:11:18 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include <cmath>
 
 int main(int ac, char **av)
 {
