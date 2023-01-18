@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 04:06:07 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/17 04:39:04 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/18 06:47:39 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void add_contac(int i, PhoneBook *phone)
 {
 	std::string seter;
 
-	while(seter.empty())
+	while(seter.empty() || seter.find_first_not_of(" \t\n\f\r\v") == std::string::npos)
 	{
 		std::cout << "Enter the first name\n";
 		std::getline(std::cin, seter);
@@ -28,7 +28,7 @@ void add_contac(int i, PhoneBook *phone)
 	}
 	phone->contac[i].setData(seter , "first_name");
 	seter.clear();
-	while(seter.empty())
+	while(seter.empty() || seter.find_first_not_of(" \t\n\f\r\v") == std::string::npos)
 	{
 		std::cout << "Enter the last name\n";
 		std::getline(std::cin, seter);
@@ -39,7 +39,7 @@ void add_contac(int i, PhoneBook *phone)
 	}
 	phone->contac[i].setData(seter , "last_name");	
 	seter.clear();
-	while(seter.empty())
+	while(seter.empty() || seter.find_first_not_of(" \t\n\f\r\v") == std::string::npos)
 	{
 		std::cout << "Enter the nickname\n";
 		std::getline(std::cin, seter);
@@ -50,7 +50,7 @@ void add_contac(int i, PhoneBook *phone)
 	}
 	phone->contac[i].setData(seter , "nickname");
 	seter.clear();
-	while(seter.empty())
+	while(seter.empty() || seter.find_first_not_of(" \t\n\f\r\v") == std::string::npos)
 	{
 		std::cout << "Enter the phone number\n";
 		std::getline(std::cin, seter);
@@ -61,7 +61,7 @@ void add_contac(int i, PhoneBook *phone)
 	}
 	phone->contac[i].setData(seter , "phonenumber");
 	seter.clear();
-	while(seter.empty())
+	while(seter.empty() || seter.find_first_not_of(" \t\n\f\r\v") == std::string::npos)
 	{
 		std::cout << "Enter the darkest secret\n";
 		std::getline(std::cin, seter);

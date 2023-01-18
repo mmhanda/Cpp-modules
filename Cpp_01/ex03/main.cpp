@@ -5,17 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 11:43:19 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/18 03:29:33 by mhanda           ###   ########.fr       */
+/*   Created: 2023/01/18 05:59:36 by mhanda            #+#    #+#             */
+/*   Updated: 2023/01/18 06:07:39 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+
 
 int main()
 {
-    int N = 10;
-    Zombie *zombies = zombieHorde(N, "zambi");
-    delete[] zombies;
     return (0);
 }

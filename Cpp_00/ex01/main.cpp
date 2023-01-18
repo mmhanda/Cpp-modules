@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 09:09:03 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/17 04:43:57 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/18 05:25:33 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int main()
 			}
 			std::cout << "Enter the index of the contact you want to display\n";
 			std::cin >> rem;
-			if (rem <= 7)
+			if (rem <= 7 && rem >= 0)
 				field_per_line(rem, &phone);
 			rem = 0;
 		}
@@ -54,6 +54,6 @@ int main()
 			break;
 		std::cout << "> ";
 	}
-	
+
 	return(0);
 }

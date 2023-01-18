@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 11:43:19 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/18 03:29:33 by mhanda           ###   ########.fr       */
+/*   Created: 2023/01/18 06:00:18 by mhanda            #+#    #+#             */
+/*   Updated: 2023/01/18 06:09:21 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-int main()
-{
-    int N = 10;
-    Zombie *zombies = zombieHorde(N, "zambi");
-    delete[] zombies;
-    return (0);
-}
+#include "HumanB.hpp"
+
+#endif
