@@ -6,7 +6,7 @@
 #    By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 10:43:25 by mhanda            #+#    #+#              #
-#    Updated: 2023/01/18 06:04:06 by mhanda           ###   ########.fr        #
+#    Updated: 2023/01/18 12:26:18 by mhanda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRC = main.cpp HumanB.cpp HumanA.cpp Weapon.cpp
 
 OBJF = $(SRC:.cpp=.o)
 
-NAME = brain
+NAME = humans
 
 CLANG = c++
 
