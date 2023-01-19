@@ -6,7 +6,7 @@
 #    By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 05:34:19 by mhanda            #+#    #+#              #
-#    Updated: 2023/01/19 05:35:15 by mhanda           ###   ########.fr        #
+#    Updated: 2023/01/19 09:25:46 by mhanda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRC = main.cpp Harl.cpp
 
 OBJF = $(SRC:.cpp=.o)
 
-NAME = humans
+NAME = Harl
 
 CLANG = c++
 

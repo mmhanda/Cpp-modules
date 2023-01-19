@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 05:32:02 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/19 05:45:10 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/19 10:19:53 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Harl
         void error( void );
     public :
         void complain( std::string level );
-}
+};
+
+typedef void (Harl::*ptr_mem)();
 
 #endif
