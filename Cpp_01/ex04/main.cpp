@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 12:26:46 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/19 02:45:48 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/19 05:24:22 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,34 +43,26 @@ int main(int ac , char **av)
         if (currentchar == s1[count])
 		{
             count++;
-            if (count == s1.length()) {
+            if (count == s1.length())
+			{
                 output_file << s2;
                 count = 0;
             }
         }
 		else
 		{
-            if (count != 0) {
-                for (unsigned long i = 0; i < count; i++) {
+            if (count != 0) 
+			{
+                for (unsigned long i = 0; i < count; i++)
+				{
                     output_file << s1[i];
                 }
+				count = 0;
             }
             output_file << currentchar;
-            count = 0;
         }
     }
 
 	input_file.close();
 	output_file.close();
 }
-
-
-
-
-
-
-
-
-
-
-
