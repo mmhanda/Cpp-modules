@@ -5,21 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 05:31:43 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/19 23:54:32 by mhanda           ###   ########.fr       */
+/*   Created: 2023/01/20 00:41:13 by mhanda            #+#    #+#             */
+/*   Updated: 2023/01/20 02:55:47 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
 int main()
 {
-    Harl harl;
-    
-    harl.complain("DEBUG");
-    harl.complain("INFO");
-    harl.complain("WARNING");
-    harl.complain("ERROR");
+    Fixed a;
+    Fixed b( a );
+    Fixed c;
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
 
-    return (0);
+    return 0;
 }

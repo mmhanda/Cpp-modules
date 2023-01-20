@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 05:31:43 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/19 23:54:32 by mhanda           ###   ########.fr       */
+/*   Created: 2023/01/20 00:41:29 by mhanda            #+#    #+#             */
+/*   Updated: 2023/01/20 01:33:55 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-int main()
+#include <iostream>
+
+class Fixed
 {
-    Harl harl;
-    
-    harl.complain("DEBUG");
-    harl.complain("INFO");
-    harl.complain("WARNING");
-    harl.complain("ERROR");
-
-    return (0);
+    private:
+        int fixedPointvalue;
+        static const int farctionalbits = 8;
+    public:
+        Fixed();
+        Fixed(Fixed copy);
+        ~Fixed();
+        int getRawBits( void ) const;
+        void setRawBits( int const raw );
 }
+
+#endif
