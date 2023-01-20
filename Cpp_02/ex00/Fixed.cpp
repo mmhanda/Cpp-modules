@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 00:41:46 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/20 01:35:01 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/20 10:55:25 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,20 @@ Fixed::Fixed()
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << '\n;
+    std::cout << "Destructor called" << '\n';
+}
+
+Fixed::Fixed(Fixed const &copy)
+{
+    std::cout << "Copy constructor called" << '\n';
+    if (this != &copy)
+        *this = copy;
+}
+
+Fixed &Fixed::operator = (Fixed const &copyfrom)
+{
+    std::cout << "Copy assignment operator called" << '\n';
+    if (this != &copyfrom)
+        this->fixedPointvalue = copyfrom.fixedPointvalue;
+    return (*this);
 }
