@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 00:41:46 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/20 12:27:36 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/21 06:18:48 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ Fixed &Fixed::operator = (Fixed const &copyfrom)
 
 float Fixed::toFloat( void ) const
 {
-    return (fixedPointvalue / (1 << farctionalbits));
+    return (((float)fixedPointvalue / (1 << farctionalbits)));
 }
 
 int Fixed::toInt( void ) const
@@ -63,13 +63,13 @@ int Fixed::toInt( void ) const
 Fixed::Fixed(int value)
 {
     std::cout << "Int constructor called" << '\n';
-    this->fixedPointvalue = value;
+    this->fixedPointvalue = value << farctionalbits;
 }
 
 Fixed::Fixed(float value)
 {
     std::cout << "Float constructor called" << '\n';
-    this->fixedPointvalue = value;
+    this->fixedPointvalue = (int)(value * (1 << farctionalbits));
 }
 
 std::ostream &operator << (std::ostream &out, const Fixed &copyfrom)
