@@ -5,28 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 06:56:25 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/21 22:43:59 by mhanda           ###   ########.fr       */
+/*   Created: 2023/01/21 23:02:50 by mhanda            #+#    #+#             */
+/*   Updated: 2023/01/21 23:06:14 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 
 int main()
 {
-
-    Fixed a;
-    Fixed b;
-    if (a > b)
-        return false;
-    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << Fixed::max( a, b ) << std::endl;
-
+    
     return (0);
 }

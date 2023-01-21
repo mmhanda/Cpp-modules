@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 00:41:46 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/21 06:18:48 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/21 19:38:09 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ Fixed::Fixed(int value)
 Fixed::Fixed(float value)
 {
     std::cout << "Float constructor called" << '\n';
-    this->fixedPointvalue = (int)(value * (1 << farctionalbits));
+    this->fixedPointvalue = roundf((value * (1 << farctionalbits)));
 }
 
 std::ostream &operator << (std::ostream &out, const Fixed &copyfrom)
