@@ -6,25 +6,23 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 23:02:50 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/22 12:14:09 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/22 16:34:58 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-    ClapTrap clap1("ClapTrap1");
-    ClapTrap clap2 = clap1;
-    ClapTrap clap3;
-    clap3 = clap1;
+    ScavTrap scav1("ScavTrap1");
+    ScavTrap scav2 = scav1;
+    ScavTrap scav3;
+    scav3 = scav1;
 
-    clap1.attack("target1");
-    clap2.takeDamage(5);
-    clap2.takeDamage(5);
-    clap2.takeDamage(5);
-    clap2.takeDamage(5);
-    clap2.beRepaired(3);
+    scav1.attack("target1");
+    scav2.takeDamage(5);
+    scav3.beRepaired(3);
+    scav3.guardGate();
 
     return (0);
 }

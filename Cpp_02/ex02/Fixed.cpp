@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 00:41:46 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/21 22:45:34 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/22 15:55:00 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ Fixed::~Fixed()
 Fixed::Fixed(Fixed const &copy)
 {
     std::cout << "Copy constructor called" << '\n';
-    if (this != &copy)
         *this = copy;
+    return (*this);
 }
 
 Fixed &Fixed::operator = (Fixed const &copyfrom)

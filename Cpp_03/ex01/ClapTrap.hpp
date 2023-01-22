@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 23:03:09 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/22 11:19:11 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/22 15:44:07 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-    private:
+    protected:
         std::string name;
         int hit_points;
         int energy_points;
