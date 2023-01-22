@@ -6,14 +6,13 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 23:03:09 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/22 12:26:50 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/22 11:19:11 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
-#include "ScavTrap.hpp"
 #include <iostream>
 
 class ClapTrap
