@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 23:03:09 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/22 05:38:18 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/22 11:19:11 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ClapTrap
     private:
         std::string name;
         int hit_points;
-        int enegy_points;
+        int energy_points;
         int attack_damage;
     public :
         ClapTrap ();
@@ -30,9 +30,7 @@ class ClapTrap
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
-        void takeDamage(unsigned int amount);
-        void beRepaired(unsigned int amount);
         ~ClapTrap ();
-}
+};
 
 #endif

@@ -6,7 +6,7 @@
 #    By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 05:34:19 by mhanda            #+#    #+#              #
-#    Updated: 2023/01/21 23:05:27 by mhanda           ###   ########.fr        #
+#    Updated: 2023/01/22 11:29:15 by mhanda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRC = main.cpp ClapTrap.cpp
 
 OBJF = $(SRC:.cpp=.o)
 
-NAME = fixed
+NAME = claptrap
 
 CLANG = c++
 
