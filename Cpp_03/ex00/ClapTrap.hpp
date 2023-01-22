@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 23:03:09 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/21 23:19:06 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/22 05:38:18 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,16 @@ class ClapTrap
         int enegy_points;
         int attack_damage;
     public :
+        ClapTrap ();
+        ClapTrap (const ClapTrap &copyfrom);
+        ClapTrap &operator = (const ClapTrap &copyfrom);
+        ClapTrap (std::string name);
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
+        ~ClapTrap ();
 }
 
 #endif
