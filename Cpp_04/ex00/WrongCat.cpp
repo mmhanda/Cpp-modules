@@ -1,48 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 02:55:48 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/25 22:32:32 by mhanda           ###   ########.fr       */
+/*   Created: 2023/01/25 02:56:06 by mhanda            #+#    #+#             */
+/*   Updated: 2023/01/25 23:02:58 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 #include <iostream>
 
-Dog::Dog(void)
+WrongCat::WrongCat(void)
 {
-    std::cout << "Dog constructor called" << std::endl;
-    this->type = "Dog";
+    std::cout << "WrongCat constructor called" << std::endl;
+    this->type = "WrongCat";
     return ;
 }
 
-Dog::Dog(const Dog & src)
+WrongCat::WrongCat(const WrongCat &src)
 {
-    std::cout << "Dog copy constructor called" << std::endl;
+    std::cout << "WrongCat copy constructor called" << std::endl;
     *this = src;
     return ;
 }
 
-Dog::~Dog(void)
+WrongCat::~WrongCat()
 {
-    std::cout << "Dog destructor called" << std::endl;
+    std::cout << "WrongCat destructor called" << std::endl;
     return ;
 }
 
-Dog & Dog::operator=(const Dog & rhs)
+WrongCat & WrongCat::operator = (const WrongCat &rhs)
 {
-    std::cout << "Dog assignation operator called" << std::endl;
+    std::cout << "WrongCat assignation operator called" << std::endl;
     if (this != &rhs)
         this->type = rhs.type;
-    return *this;
+    return (*this);
 }
 
-void Dog::makeSound(void) const
+void WrongCat::makeSound(void) const
 {
-    std::cout << "bark" << std::endl;
+    std::cout << "meow" << std::endl;
     return ;
 }
