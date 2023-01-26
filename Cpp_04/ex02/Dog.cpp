@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 02:55:48 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/26 03:35:55 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/26 05:16:25 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ Dog & Dog::operator=(const Dog & rhs)
 {
     std::cout << "Dog assignation operator called" << std::endl;
     if (this != &rhs)
+    {
+        this->_Brain = new Brain(*rhs._Brain);
         this->type = rhs.type;
+    }
     return *this;
 }
 

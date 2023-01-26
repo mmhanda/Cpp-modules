@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:10:03 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/26 04:39:40 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/26 05:17:45 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     const Animal *aa;
-   
+    
     aa = j;
     delete j;
     delete i;

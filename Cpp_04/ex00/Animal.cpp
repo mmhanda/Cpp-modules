@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 02:55:28 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/25 21:06:30 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/26 05:14:28 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ Animal::~Animal(void)
 Animal & Animal::operator=(const Animal & rhs)
 {
     std::cout << "Animal assignation operator called" << std::endl;
+    if (this != &rhs)
     this->type = rhs.type;
     return *this;
 }

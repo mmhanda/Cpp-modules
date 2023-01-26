@@ -35,7 +35,8 @@ WrongAnimal::~WrongAnimal(void)
 WrongAnimal & WrongAnimal::operator=(const WrongAnimal & rhs)
 {
     std::cout << "WrongAnimal assignation operator called" << std::endl;
-    this->type = rhs.type;
+    if (this != &rhs)
+        this->type = rhs.type;
     return *this;
 }
 
