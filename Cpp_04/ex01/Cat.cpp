@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 02:56:06 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/26 00:20:25 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/26 03:36:00 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ Cat::Cat(const Cat &src)
 
 Cat::~Cat()
 {
-    std::cout << "Cat destructor called" << std::endl;
     delete this->_Brain;
+    std::cout << "Cat Destructor called" << std::endl;
     return ;
 }
 

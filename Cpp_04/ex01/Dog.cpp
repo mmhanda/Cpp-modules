@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 02:55:48 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/26 00:20:07 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/26 03:35:55 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ Dog::Dog(const Dog & src)
 
 Dog::~Dog(void)
 {
-    std::cout << "Dog destructor called" << std::endl;
     delete this->_Brain;
+    std::cout << "Dog Destructor called" << std::endl;
     return ;
 }
 
