@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 08:21:00 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/27 12:26:10 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/28 00:49:00 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void Bureaucrat::incrementGrade()
 
 void Bureaucrat::decrementGrade()
 {
-    if (this->grade > 150)
+    if (this->grade + 1 > 150)
         throw GradeTooLowException();
     else
         this->grade += 1;
@@ -105,5 +105,5 @@ void Bureaucrat::signForm(Form &form)
     {
         std::cout << this->name << " couldn't sign " <<
         form.getName() << " the reason is " << e.what() << std::endl;
-    }   
+    }
 }

@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 08:20:24 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/27 12:38:37 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/28 00:51:58 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,64 +15,45 @@
 
 int main()
 {
-    Bureaucrat b1("Bob", 1);
-    Bureaucrat b2("Sue", 10);
-    Form f1("Form 1", 50, 100);
-    Form f2("Form 2", 50, 50);
-    Form f3("Form 3", 50, 10);
+    try
+    {
+        // Test Bureaucrat constructor and exception handling
+        Bureaucrat bur1("joe", 1);
+        // Bureaucrat bur2("jim", 0);
+        // Bureaucrat bur3("jane", 151);
+        // std::cout << bur1 << std::endl;
+        
+        // Test incrementGrade() and exception handling
+        // bur1.incrementGrade();
+        // bur1.decrementGrade();
+        // std::cout << bur1 << std::endl;
 
-    std::cout << b1 << std::endl;
-    std::cout << b2 << std::endl;
-    std::cout << f1 << std::endl;
-    std::cout << f2 << std::endl;
-    std::cout << f3 << std::endl;
+        // Test decrementGrade() and exception handling
+        // bur1.decrementGrade();
+        // bur1.decrementGrade();
+        // std::cout << bur1 << std::endl;
 
-    b1.incrementGrade();
-    b2.decrementGrade();
+        // Test Form constructor and exception handling
+        Form from1("watiqa", 5, 1);
+        // Form from2("application", 1, 10);
+        // Form from3("contract", 15, 150);
+        // std::cout << from1 << std::endl;
 
-    std::cout << b1 << std::endl;
-    std::cout << b2 << std::endl;
+        // Test beSigned() and exception handling
+        bur1.signForm(from1);
+        // from1.beSigned(bur1);
+        // std::cout << from1 << std::endl;
+        // from1.beSigned(bur2);
+        // std::cout << from1 << std::endl;
 
-    try {
-        b1.signForm(f1);
+        // Test signForm()
+        bur1.signForm(from1);
+        std::cout << from1 << std::endl;
     }
-    catch (Form::GradeTooLowException &e) {
-        std::cout << b1.getName() << " couldn't sign " << f1.getName() << " because " << e.what() << std::endl;
-    }
-
-    try {
-        b1.signForm(f2);
-    }
-    catch (Form::GradeTooLowException &e) {
-        std::cout << b1.getName() << " couldn't sign " << f2.getName() << " because " << e.what() << std::endl;
-    }
-
-    try {
-        b1.signForm(f3);
-    }
-    catch (Form::GradeTooLowException &e) {
-        std::cout << b1.getName() << " couldn't sign " << f3.getName() << " because " << e.what() << std::endl;
-    }
-
-    try {
-        b2.signForm(f1);
-    }
-    catch (Form::GradeTooLowException &e) {
-        std::cout << b2.getName() << " couldn't sign " << f1.getName() << " because " << e.what() << std::endl;
+    catch(std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
     }
 
-    try {
-        b2.signForm(f2);
-    }
-    catch (Form::GradeTooLowException &e) {
-        std::cout << b2.getName() << " couldn't sign " << f2.getName() << " because " << e.what() << std::endl;
-    }
-
-    try {
-        b2.signForm(f3);
-    }
-    catch (Form::GradeTooLowException &e) {
-        std::cout << b2.getName() << " couldn't sign " << f3.getName() << " because " << e.what() << std::endl;
-    }
     return (0);
 }

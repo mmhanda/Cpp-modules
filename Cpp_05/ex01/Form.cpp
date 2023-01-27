@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:42:30 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/27 12:30:57 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/27 23:19:47 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Form::Form()
 Form::Form(const std::string &name, const int &gradeforsign, const int &gradeforrxecute)
 : name(name), gradeforsign(gradeforsign), gradeforrxecute(gradeforrxecute)
 {
+    std::cout << "Form Parametrized Constructor Called" << std::endl;
     if (gradeforsign < 1)
         throw GradeTooHighException();
     else if (gradeforsign > 150)
