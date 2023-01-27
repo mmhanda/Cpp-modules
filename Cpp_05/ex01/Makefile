@@ -6,21 +6,21 @@
 #    By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 05:34:19 by mhanda            #+#    #+#              #
-#    Updated: 2023/01/27 09:21:58 by mhanda           ###   ########.fr        #
+#    Updated: 2023/01/27 12:21:51 by mhanda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 
 OBJF = $(SRC:.cpp=.o)
 
-NAME = bureaucrat
+NAME = sing
 
 CLANG = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-$(NAME) : $(OBJF) Bureaucrat.hpp
+$(NAME) : $(OBJF) Bureaucrat.hpp Form.hpp
 		$(CLANG) $(FLAGS)  $(OBJF) -o $(NAME)
 
 %.o: %.cpp
