@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 05:50:09 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/28 06:36:24 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/28 06:40:42 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include "PresidentialPardonForm.hpp"
 # include "RobotomyRequestForm.hpp"
 # include "ShrubberyCreationForm.hpp"
-
 
 class Intern
 {

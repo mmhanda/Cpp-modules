@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 05:50:31 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/28 06:36:57 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/28 06:41:28 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ AForm *Intern::makeForm(std::string what_form, std::string target)
 {
     int formType;
     if (what_form == "robotomy request") formType = 1;
-    if (what_form == "shrubbery creation") formType = 2;
-    if (what_form == "presidential pardon") formType = 3;
+    else if (what_form == "shrubbery creation") formType = 2;
+    else if (what_form == "presidential pardon") formType = 3;
     else formType = 0;
     AForm *form;
     switch (formType) {
