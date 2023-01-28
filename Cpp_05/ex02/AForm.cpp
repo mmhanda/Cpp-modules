@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:42:30 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/28 01:40:31 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/28 05:27:24 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 AForm::AForm()
 : name(""), signedform(false), gradeforsign(150), gradeforrxecute(150)
 {
+    std::cout << "AForm Default Constructor Called" << std::endl;
 }
 
 AForm::AForm(const std::string &name, const int &gradeforsign, const int &gradeforrxecute)
@@ -35,11 +36,13 @@ AForm::AForm(const std::string &name, const int &gradeforsign, const int &gradef
 AForm::AForm(const AForm &copyfrom)
 : name(copyfrom.name), gradeforsign(copyfrom.gradeforsign), gradeforrxecute(copyfrom.gradeforrxecute)
 {
+    std::cout << "AForm Copy Constructor Called" << std::endl;
     *this = copyfrom;
 }
 
 AForm & AForm::operator = (const AForm &copyfrom)
 {
+    std::cout << "AForm Assignment Operator Called" << std::endl;
     this->signedform = copyfrom.signedform;
     return (*this);
 }
@@ -49,17 +52,17 @@ std::string AForm::getName()
     return (this->name);
 }
 
-bool AForm::getSigned()
+bool AForm::getSigned() const
 {
     return (this->signedform);
 }
 
-int AForm::getGradeforsign()
+int AForm::getGradeforsign() const
 {
     return (this->gradeforsign);
 }
 
-int AForm::getGradeforrxecute()
+int AForm::getGradeforrxecute() const
 {
     return (this->gradeforrxecute);
 }
@@ -91,6 +94,12 @@ std::ostream &operator << (std::ostream &out, AForm &form)
     return (out);
 }
 
+const char *AForm::FormNotSignedException::what() const throw()
+{
+    return ("Form is not signed");
+}
+
 AForm::~AForm()
-{   
+{
+    std::cout << "Form Destructor Called" << std::endl;
 }

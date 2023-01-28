@@ -6,49 +6,30 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 08:20:24 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/28 01:37:13 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/28 05:34:53 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
     try
     {
-        // Test Bureaucrat constructor and exception handling
-        Bureaucrat bur1("joe", 1);
-        // Bureaucrat bur2("jim", 0);
-        // Bureaucrat bur3("jane", 151);
-        // std::cout << bur1 << std::endl;
-        
-        // Test incrementGrade() and exception handling
-        // bur1.incrementGrade();
-        // bur1.decrementGrade();
-        // std::cout << bur1 << std::endl;
-
-        // Test decrementGrade() and exception handling
-        // bur1.decrementGrade();
-        // bur1.decrementGrade();
-        // std::cout << bur1 << std::endl;
-
-        // Test Form constructor and exception handling
-        AForm from1("watiqa", 5, 1);
-        // Form from2("application", 1, 10);
-        // Form from3("contract", 15, 150);
-        // std::cout << from1 << std::endl;
-
-        // Test beSigned() and exception handling
-        bur1.signForm(from1);
-        // from1.beSigned(bur1);
-        // std::cout << from1 << std::endl;
-        // from1.beSigned(bur2);
-        // std::cout << from1 << std::endl;
-
-        // Test signForm()
-        bur1.signForm(from1);
-        std::cout << from1 << std::endl;
+        Bureaucrat bur("Bob", 5);
+        RobotomyRequestForm rrf("Home");
+        ShrubberyCreationForm pp("car");
+        PresidentialPardonForm pre("building");
+        bur.signForm(rrf);
+        bur.signForm(pp);
+        bur.signForm(pre);
+        rrf.execute(bur);
+        pp.execute(bur);
+        pre.execute(bur);
     }
     catch(std::exception &e)
     {

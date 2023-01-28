@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 08:21:00 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/28 01:39:55 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/28 04:58:31 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ std::string Bureaucrat::getName()
     return (this->name);
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return (this->grade);
 }

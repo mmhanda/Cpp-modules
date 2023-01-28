@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:42:10 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/28 01:36:48 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/28 05:01:14 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,11 @@ class AForm
         AForm(const AForm &copyfrom);
         AForm &operator = (const AForm &copyfrom);
         std::string getName();
-        bool getSigned();
-        int getGradeforsign();
-        int getGradeforrxecute();
+        bool getSigned() const;
+        int getGradeforsign() const;
+        int getGradeforrxecute() const;
         void beSigned(Bureaucrat &bur);
+        virtual void execute(Bureaucrat const &executor) const = 0;
         class GradeTooHighException : public std::exception
         {
             public:
@@ -43,7 +44,12 @@ class AForm
             public :
                 const char* what() const throw();
         };
-        ~AForm();
+        class FormNotSignedException : public std::exception
+        {
+            public :
+                const char* what() const throw();
+        };
+        virtual ~AForm();
 };
 
 std::ostream &operator << (std::ostream &out, AForm &form);

@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:42:30 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/27 23:19:47 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/28 05:09:16 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,6 @@ std::ostream &operator << (std::ostream &out, Form &form)
 }
 
 Form::~Form()
-{   
+{
+    std::cout << "Form Destructor Called" << std::endl;
 }

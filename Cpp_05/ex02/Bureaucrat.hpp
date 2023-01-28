@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 08:20:51 by mhanda            #+#    #+#             */
-/*   Updated: 2023/01/28 01:39:45 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/01/28 04:58:58 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Bureaucrat
         Bureaucrat(const Bureaucrat &src);
         Bureaucrat &operator = (const Bureaucrat &src);
         std::string getName();
-        int getGrade();
+        int getGrade() const;
         void incrementGrade();
         void decrementGrade();
         void signForm(AForm &form);
