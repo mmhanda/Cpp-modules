@@ -6,11 +6,12 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 05:12:11 by mhanda            #+#    #+#             */
-/*   Updated: 2023/02/03 06:50:18 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/02/03 09:28:55 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
+
 
 Converter::Converter()
 {
@@ -51,25 +52,50 @@ Converter & Converter::operator = (Converter const & rhs)
     return *this;
 }
 
+template <typename T>
+bool is_nan(T value)
+{
+    if (value == std::numeric_limits<T>::infinity()) {
+        return true;
+    } else if (value == -std::numeric_limits<T>::infinity()) {
+        return true;
+    } else if (value != value) {
+        return true;
+    }
+    return false;
+}
+
 Type Converter::getType(const std::string &type)
 {
     int length = type.length();
     if (length == 1 && !isdigit(type[0]))
+    {
+        std::cout << "CHAR" << std::endl;
         return CHAR;
+    }
     
     char is_char = type[length - 1];
     if (is_char == 'f')
+    {
+        std::cout << "FLOAT" << std::endl;
         return FLOAT;
+    }
 
     char *last;
     std::strtod(type.c_str(), &last);
     if (*last == '\0')
+    {
+        std::cout << "DOUBLE" << std::endl;
         return DOUBLE;
-    
+    }
+
     char *last2;
     std::strtol(type.c_str(), &last2, 10);
     if (*last2 == '\0')
+    {
+        std::cout << "INT" << std::endl;
         return INT;
+    }
 
     return INVALID;
 }
@@ -116,7 +142,7 @@ void Converter::convert(Type type)
 void Converter::print_literal()
 {
     std::cout << "char: ";
-    if (this->type == INVALID)
+    if (this->type == INVALID || is_nan(this->_float) || is_nan(this->_double))
         std::cout << "impossible" << std::endl;
     else if (!isdisplayable(this->_char))
         std::cout << "Non displayable" << std::endl;
@@ -124,34 +150,34 @@ void Converter::print_literal()
         std::cout << "'" << this->_char << "'" << std::endl;
     
     std::cout << "int: ";
-    if (this->type == INVALID)
+    if (this->type == INVALID || is_nan(this->_float) || is_nan(this->_double))
         std::cout << "impossible" << std::endl;
     else
         std::cout << this->_int << std::endl;
     
-std::cout << "float: ";
-if (this->type == INVALID)
-    std::cout << "impossible" << std::endl;
-else {
-    float f = this->_float;
-    int i = (int)f;
-    if (f - i == 0)
-        std::cout << i << ".0f" << std::endl;
-    else
-        std::cout << f << "f" << std::endl;
-}
+    std::cout << "float: ";
+    if (this->type == INVALID)
+        std::cout << "impossible" << std::endl;
+    else {
+        float f = this->_float;
+        int i = (int)f;
+        if (f - i == 0)
+            std::cout << i << ".0f" << std::endl;
+        else
+            std::cout << f << "f" << std::endl;
+    }
 
-std::cout << "double: ";
-if (this->type == INVALID)
-    std::cout << "impossible" << std::endl;
-else {
-    double d = this->_double;
-    int i = (int)d;
-    if (d - i == 0)
-        std::cout << i << ".0" << std::endl;
-    else
-        std::cout << d << std::endl;
-}
+    std::cout << "double: ";
+    if (this->type == INVALID)
+        std::cout << "impossible" << std::endl;
+    else {
+        double d = this->_double;
+        int i = (int)d;
+        if (d - i == 0)
+            std::cout << i << ".0" << std::endl;
+        else
+            std::cout << d << std::endl;
+    }
 }
 
 Converter::~Converter()
