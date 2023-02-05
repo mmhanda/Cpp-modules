@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 05:12:24 by mhanda            #+#    #+#             */
-/*   Updated: 2023/02/03 09:13:35 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/02/05 15:20:31 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,5 @@ class Converter
 };
 
 bool isdisplayable(char c);
-
-// std::ostream & operator<<(std::ostream & o, Convert const & rhs);
 
 #endif

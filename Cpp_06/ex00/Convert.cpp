@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 05:12:11 by mhanda            #+#    #+#             */
-/*   Updated: 2023/02/05 15:17:26 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/02/05 15:20:38 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,9 +173,3 @@ void Converter::print_literal()
 Converter::~Converter()
 {
 }
-
-// std::ostream & operator << (std::ostream & o, Converter const & rhs)
-// {
-//     // o << hi << std::endl;
-//     return o;
-// }

@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 05:12:33 by mhanda            #+#    #+#             */
-/*   Updated: 2023/02/03 08:18:39 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/02/05 15:20:25 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,5 @@ int main(int ac, char **av)
     typ = literal.getType(input);
     literal.convert(typ);
     literal.print_literal();
-    // std::cout <<  strtof(type.c_str(), NULL) << std::endl;
-    
-    // getType(type);
     return (0);
 }
