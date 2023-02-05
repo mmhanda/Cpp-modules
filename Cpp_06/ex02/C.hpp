@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 21:14:29 by mhanda            #+#    #+#             */
-/*   Updated: 2023/02/05 21:16:53 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/02/05 23:17:28 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define C_HPP
 
 # include "Base.hpp"
-
 
 class C : public Base
 {

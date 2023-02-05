@@ -6,11 +6,11 @@
 #    By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 05:34:19 by mhanda            #+#    #+#              #
-#    Updated: 2023/02/05 21:19:08 by mhanda           ###   ########.fr        #
+#    Updated: 2023/02/05 23:18:37 by mhanda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Base.cpp A.cpp B.cpp C.cpp
+SRC = main.cpp Base.cpp
 
 OBJF = $(SRC:.cpp=.o)
 
