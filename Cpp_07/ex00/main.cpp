@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 02:18:44 by mhanda            #+#    #+#             */
-/*   Updated: 2023/02/07 23:30:37 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/02/07 23:32:45 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,18 @@ T max(T &data, T&data1)
 
 int main()
 {
-    int a = 3;
-    int s = 9;
+    int a = 2;
+    int b = 3;
+    ::swap( a, b );
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+    std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+    std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+    std::string c = "chaine1";
+    std::string d = "chaine2";
+    ::swap(c, d);
+    std::cout << "c = " << c << ", d = " << d << std::endl;
+    std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+    std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 
-    std::cout << "min " << min<int>(a, s) << std::endl;
-    std::cout << "max " << max<int>(a, s) << std::endl;
-    std::cout << a << " _ " << s << std::endl;
-    swap<int>(a, s);
-    std::cout << a  << " _ "  << s << std::endl;
     return (0);
 }
