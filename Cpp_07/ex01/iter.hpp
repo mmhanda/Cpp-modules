@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 02:19:02 by mhanda            #+#    #+#             */
-/*   Updated: 2023/02/13 02:53:09 by mhanda           ###   ########.fr       */
+/*   Created: 2023/02/07 23:35:07 by mhanda            #+#    #+#             */
+/*   Updated: 2023/02/13 03:04:08 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-# define WHATEVER_HPP
+#ifndef ITER_HPP
+# define ITER_HPP
 
 #include <iostream>
 
 template <typename T>
-void swap(T &data, T&data1);
-
-template <typename T>
-T min(T &data, T&data1);
-
-template <typename T>
-T max(T &data, T&data1);
+void iter(T* ptr, size_t length, void (*func)(T&));
 
 #endif
