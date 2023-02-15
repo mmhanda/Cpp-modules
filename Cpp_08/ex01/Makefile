@@ -6,7 +6,7 @@
 #    By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 05:34:19 by mhanda            #+#    #+#              #
-#    Updated: 2023/02/15 04:32:54 by mhanda           ###   ########.fr        #
+#    Updated: 2023/02/15 04:43:04 by mhanda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRC = main.cpp Span.cpp
 
 OBJF = $(SRC:.cpp=.o)
 
-NAME = Span
+NAME = span
 
 CLANG = c++
 
