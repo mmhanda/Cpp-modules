@@ -58,7 +58,10 @@
         "stack": "cpp",
         "__functional_03": "cpp",
         "climits": "cpp",
-        "__functional_base_03": "cpp"
+        "__functional_base_03": "cpp",
+        "vector": "cpp",
+        "list": "cpp",
+        "__cxx_version": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

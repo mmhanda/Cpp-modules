@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 04:49:15 by mhanda            #+#    #+#             */
-/*   Updated: 2023/02/15 10:00:41 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/02/22 06:34:02 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,23 @@
 
 #include <iostream>
 #include <stack>
-#include <list>
 
-
-// template <typename T>
-// class MutantStack : public std::stack<T>
-// {
-//     public:
-//         MutantStack(void);
-//         MutantStack(MutantStack const & src);
-//         ~MutantStack(void);
-
-//         MutantStack & operator=(MutantStack const & rhs);
-
-//         typedef typename std::stack<T>::container_type::iterator iterator;
-
-//         iterator begin(void);
-//         iterator end(void);
-// };
+template<typename T>
+class MutantStack : public std::stack<T>
+{
+public:
+    MutantStack() {}
+    ~MutantStack() {}
+    MutantStack(MutantStack const &src) {*this = src;}
+    MutantStack &operator=(MutantStack const &rhs)
+    {
+        if (this != &rhs)
+            std::stack<T>::operator=(rhs);
+        return *this;
+    }
+    typedef typename std::stack<T>::container_type::iterator  iterator;
+    iterator begin() { return std::stack<T>::c.begin(); }
+    iterator end() { return std::stack<T>::c.end(); }
+};
 
 #endif

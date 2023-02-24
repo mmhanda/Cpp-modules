@@ -6,7 +6,7 @@
 /*   By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 04:32:34 by mhanda            #+#    #+#             */
-/*   Updated: 2023/02/15 04:42:50 by mhanda           ###   ########.fr       */
+/*   Updated: 2023/02/15 06:58:00 by mhanda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 Span::Span()
 {
-    this->_n = 0;
-    this->_arr = NULL;
-    this->_size = 0;
+    this->n = 0;
+    this->tab = NULL;
+    this->counter = 0;
 }
 
 Span::Span(unsigned int n)
 {
-    this->_n = n;
-    this->_arr = new int[n];
-    this->_size = 0;
+    this->n = n;
+    this->tab = new int[n];
+    this->counter = 0;
 }
 
 Span::Span(Span const & src)
@@ -33,18 +33,35 @@ Span::Span(Span const & src)
 
 Span & Span::operator=(Span const & rhs)
 {
-    this->_n = rhs._n;
-    this->_arr = rhs._arr;
-    this->_size = rhs._size;
+    this->n = rhs.n;
+    this->tab = rhs.tab;
+    this->counter = rhs.counter;
     return (*this);
 }
 
 void Span::addNumber(int n)
 {
-    if (this->_size == (int)this->_n)
+    if (this->counter == (int)this->n)
         throw std::exception();
-    this->_arr[this->_size] = n;
-    this->_size++;
+    this->tab[this->counter] = n;
+    this->counter++;
+}
+
+void Span::addNumber(int start, int end)
+{
+    if (end < start) {
+        throw std::invalid_argument("Invalid range: end is less than start.");
+    }
+
+    int count = end - start + 1;
+    if (this->counter + count > (int)this->n) {
+        throw std::length_error("Container is already full.");
+    }
+
+    for (int i = start; i <= end; ++i) {
+        this->tab[this->counter] = i;
+        ++this->counter;
+    }
 }
 
 int Span::shortestSpan()
@@ -54,15 +71,15 @@ int Span::shortestSpan()
     int j = 0;
     int diff = 0;
 
-    if (this->_size < 2)
+    if (this->counter < 2)
         throw std::exception();
-    min = this->_arr[0];
-    while (i < this->_size)
+    min = this->tab[0];
+    while (i < this->counter)
     {
         j = i + 1;
-        while (j < this->_size)
+        while (j < this->counter)
         {
-            diff = this->_arr[i] - this->_arr[j];
+            diff = this->tab[i] - this->tab[j];
             if (diff < 0)
                 diff *= -1;
             if (diff < min)
@@ -81,15 +98,15 @@ int Span::longestSpan()
     int j = 0;
     int diff = 0;
 
-    if (this->_size < 2)
+    if (this->counter < 2)
         throw std::exception();
-    max = this->_arr[0];
-    while (i < this->_size)
+    max = this->tab[0];
+    while (i < this->counter)
     {
         j = i + 1;
-        while (j < this->_size)
+        while (j < this->counter)
         {
-            diff = this->_arr[i] - this->_arr[j];
+            diff = this->tab[i] - this->tab[j];
             if (diff < 0)
                 diff *= -1;
             if (diff > max)
@@ -103,5 +120,5 @@ int Span::longestSpan()
 
 Span::~Span()
 {
-    delete [] this->_arr;
+    delete[] this->tab;
 }

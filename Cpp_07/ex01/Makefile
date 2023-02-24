@@ -6,7 +6,7 @@
 #    By: mhanda <mhanda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 05:34:19 by mhanda            #+#    #+#              #
-#    Updated: 2023/02/13 03:12:00 by mhanda           ###   ########.fr        #
+#    Updated: 2023/02/13 03:29:26 by mhanda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = iter
 
 CLANG = c++
 
-FLAGS = -Wall -Wextra  -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 $(NAME) : $(OBJF) iter.hpp
 		$(CLANG) $(FLAGS)  $(OBJF) -o $(NAME)
