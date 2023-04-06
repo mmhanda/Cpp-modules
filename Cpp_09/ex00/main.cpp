@@ -8,7 +8,7 @@ int main(int ac, char **av)
     {
         data csv;
         stor_data_in_map(csv);
-        check_txt(av[1]);
+        check_txt(av[1], csv);
     }
     catch(const char *msg)
     {
