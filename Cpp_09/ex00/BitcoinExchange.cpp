@@ -111,9 +111,7 @@ void stor_data_in_map(data &csv)
     {
         if (rem > 0) {
             char **lin = split(line.c_str(), ',');
-            csv.insert(std::pair<std::string, double>(std::stod(std::string(lin[1])), lin[0]));
-            std::cout << csv.at(std::string(lin[0])) << std::endl;
-            // std::cout << "lin[0] " << lin[0] << std::endl;
+            csv.insert(std::pair<std::string, double>(lin[0], std::stod(std::string(lin[1]))));
             free_lin(lin, 2);
         }
         rem ++;
@@ -192,7 +190,6 @@ void check_txt(char *txt, data &csv) {
         throw ("txt file not good");
 
     std::string data;
-    std::vector<std::string> table;
     int rem = 0;
 	t_date dat;
     while (std::getline(file, data))
@@ -212,9 +209,7 @@ void check_txt(char *txt, data &csv) {
 				std::cout << "Error: too large a number." << std::endl;
 				continue;
 			}
-			// std::map<std::string, double>::iterator it = csv.upper_bound(std::string(date[0]));
 			std::map<std::string, double>::iterator it = csv.lower_bound(std::string(date[0]));
-			// std::cerr << "Lower bound is " << it->first << std::endl;
 			std::cout << std::string(date[0]) << " => " << std::string(date[2]) << " = "
 						<<(it->second * std::stod(std::string(date[2]))) << std::endl;
         }

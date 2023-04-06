@@ -2,14 +2,7 @@
 
 #include <iostream>
 #include <map>
-#include <fcntl.h>
-#include <string.h>
-#include <unistd.h>
 #include <fstream>
-#include <stdlib.h>
-#include <vector>
-#include <stdio.h>
-
 
 typedef struct s_date 
 {

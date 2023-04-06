@@ -2,7 +2,7 @@ SRC = main.cpp BitcoinExchange.cpp
 
 OBJF = $(SRC:.cpp=.o)
 
-NAME = bitcoinexchange
+NAME = btc
 
 CLANG = c++
 
