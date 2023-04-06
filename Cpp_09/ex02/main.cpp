@@ -15,19 +15,19 @@ int main(int ac, char **av) {
         while(av[i]) {
 
             if (std::stoi(av[i]) > 0) {
-                numbers.push_back(std::stoi(av[i]));
+                numbers_v.push_back(std::stoi(av[i]));
+                numbers_d.push_back(std::stoi(av[i]));
             }
             else
                 throw std::runtime_error("check your argument");
             i++;
         }
-        ///////////////////       befor       /////////////////////////
-            std::cout << "Before:  ";
-            for (size_t i = 0; i < numbers.size(); i++)
-                std::cout << numbers.at(i) << " ";
-            std::cout << std::endl;
-        ///////////////////////////////////////////////////////////////
-
+        std::cout << "Before:  ";
+        for (size_t i = 0; i < numbers_v.size(); i++)
+            std::cout << numbers_v.at(i) << " ";
+        std::cout << std::endl;
+        
+        
     }
     catch(const std::exception &e)
     {
