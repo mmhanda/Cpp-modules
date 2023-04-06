@@ -84,13 +84,26 @@ char	**split(const char *s, char c)
 	return (new1);
 }
 
+void free_lin(char **lin, int param)
+{
+    int fre = 0;
+    while(lin[fre]) {
+        free(lin[fre]);
+        fre++;
+    }
+    free(lin);
+    lin = NULL;
+    if (fre != param)
+        throw ("Error on file");
+}
+
 void stor_data_in_map(data &csv)
 {
 
     std::ifstream file("data.csv");
 
     if(!file.good())
-        throw std::exception();
+        throw ("file not good");
 
     std::string line;
     int rem = 0;
@@ -98,16 +111,37 @@ void stor_data_in_map(data &csv)
     {
         if (rem > 0) {
             char **lin = split(line.c_str(), ',');
-            csv.insert(std::pair<std::string, double>(lin[0], std::stod(std::string(lin[1]))));
+            csv.insert(std::pair<std::string, double>(lin[0], std::stod(std::string(lin[1]))));;
             std::cout << csv.at(std::string(lin[0])) << std::endl;
-            int fre = 0;
-            while(lin[fre]) {
-                free(lin[fre]);
-                fre++;
-            }
-            free(lin);
-            lin = NULL;
+            free_lin(lin, 2);
         }
         rem ++;
     }
+}
+
+void check_txt(char *txt) {
+
+    std::ifstream file(txt);
+
+    if (!file.good())
+        throw ("txt file not good");
+
+    std::string data;
+    std::vector<std::string> table;
+    int rem = 0;
+    while (std::getline(file, data))
+    {
+        if (rem > 0) {
+            if (data.find(" | ") == std::string::npos)
+                throw ("Error: bad input");
+            // char **lin = split(data.c_str(), '-');
+            // data = lin[0] + lin[1];
+            // lin = split(lin[2], ' ');
+            // data += lin[0] + " " + lin[2];
+            // free_lin(lin, 3);
+            table.push_back(data);
+        }
+        rem ++;
+    }
+    
 }
