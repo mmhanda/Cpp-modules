@@ -1,15 +1,8 @@
 #pragma once 
 
 #include <iostream>
-#include <vector>
+#include <stack>
+#include <stdlib.h>
 
-class RPN
-{
-    private:
-        std::vector<int> ragne;
-    public:
-        RPN();
-        ~RPN();
-        RPN &operator=(RPN const &copyfrom);
-        RPN (const RPN &copy_from) { this = copy_from };
-};
+int to_int(char c);
+void calcul(std::stack<int> &stak, const char param);
