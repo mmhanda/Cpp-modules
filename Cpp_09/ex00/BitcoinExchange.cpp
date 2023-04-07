@@ -55,7 +55,7 @@ char **ft_free(int a, char **new1)
     return(NULL);
 }
 
-char	**split(const char *s, char c)
+char	**parce_it(const char *s, char c)
 {
 	int		a;
 	int		i;
@@ -110,7 +110,7 @@ void stor_data_in_map(data &csv)
     while (std::getline(file, line))
     {
         if (rem > 0) {
-            char **lin = split(line.c_str(), ',');
+            char **lin = parce_it(line.c_str(), ',');
             csv.insert(std::pair<std::string, double>(lin[0], std::stod(std::string(lin[1]))));
             free_lin(lin, 2);
         }
@@ -120,7 +120,7 @@ void stor_data_in_map(data &csv)
 
 t_date handel_date(const char *get_date)
 {
-	char **date = split(get_date, '-');
+	char **date = parce_it(get_date, '-');
 	t_date dat;
 
  	dat.yy = atoi(date[0]);
@@ -195,7 +195,7 @@ void check_txt(char *txt, data &csv) {
     while (std::getline(file, data))
     {
         if (rem > 0) {
-			char **date = split(data.c_str(), ' ');
+			char **date = parce_it(data.c_str(), ' ');
 			dat = handel_date(date[0]);
 			if (check_valid_date(dat)) {
 				std::cout << "Error: bad input => " << std::string(date[0]) << std::endl;
