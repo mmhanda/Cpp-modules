@@ -209,7 +209,11 @@ void check_txt(char *txt, data &csv) {
 				std::cout << "Error: too large a number." << std::endl;
 				continue;
 			}
-			std::map<std::string, double>::iterator it = csv.lower_bound(std::string(date[0]));
+			std::map<std::string, double>::iterator it = csv.find(std::string(date[0]));
+			if (it == csv.end() ) {
+				it = csv.lower_bound(std::string(date[0]));
+				it--;
+			}
 			std::cout << std::string(date[0]) << " => " << std::string(date[2]) << " = "
 						<<(it->second * std::stod(std::string(date[2]))) << std::endl;
         }
