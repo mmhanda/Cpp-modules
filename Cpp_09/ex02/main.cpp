@@ -26,13 +26,13 @@ int main(int ac, char **av) {
         for (size_t i = 0; i < numbers_v.size(); i++)
             std::cout << numbers_v.at(i) << " ";
         std::cout << std::endl;
-        
+        merge_num_d(numbers_d);
         
     }
     catch(const std::exception &e)
     {
         std::cerr << e.what() << '\n';
     }
-    
+
     return (0);
 }
