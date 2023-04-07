@@ -14,7 +14,7 @@ int main(int ac, char **av) {
     {
         while(av[i]) {
 
-            if (std::stoi(av[i]) > 0) {
+            if (std::stoi(av[i]) >= 0) {
                 numbers_v.push_back(std::stoi(av[i]));
                 numbers_d.push_back(std::stoi(av[i]));
             }
@@ -26,13 +26,33 @@ int main(int ac, char **av) {
         for (size_t i = 0; i < numbers_v.size(); i++)
             std::cout << numbers_v.at(i) << " ";
         std::cout << std::endl;
-        merge_num_d(numbers_d);
-        
+
+        timeval befor_v, after_v, befor_d, after_d;
+
+        gettimeofday(&befor_v, NULL);
+        merge_sort_v(numbers_v);
+        gettimeofday(&after_v, NULL);
+        std::cout << "Time to process a range of  " << numbers_v.size()
+                << " elements with std::[vector] : "
+                << ((after_v.tv_sec - befor_v.tv_sec) * 1000000.0)
+                + (after_v.tv_usec - befor_v.tv_usec) << " us" << std::endl;
+
+        gettimeofday(&befor_d, NULL);
+        merge_sort_d(numbers_d);
+        gettimeofday(&after_d, NULL);
+        std::cout << "Time to process a range of  " << numbers_d.size()
+                << " elements with std::[deque]  : "
+                << ((after_d.tv_sec - befor_d.tv_sec) * 1000000.0)
+                + (after_d.tv_usec - befor_d.tv_usec) << " us" << std::endl;
+
+        std::cout << "After:  ";
+        for (size_t i = 0; i < numbers_d.size(); i++)
+            std::cout << numbers_d.at(i) << " ";
+        std::cout << std::endl;
     }
     catch(const std::exception &e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << '\n';  
     }
-
     return (0);
 }
