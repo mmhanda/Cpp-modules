@@ -47,15 +47,15 @@ char **ft_free(int a, char **new1)
 {
 	while (a > 0)
 	{
-		free(new1[a]);
+		delete[] (new1[a]);
 		a--;
 	}
-	free(new1);
+	delete[] (new1);
 
     return(NULL);
 }
 
-char	**parce_it(const char *s, char c)
+char	**split(const char *s, char c)
 {
 	int		a;
 	int		i;
@@ -64,7 +64,7 @@ char	**parce_it(const char *s, char c)
 
 	if (!s)
 		return (NULL);
-	new1 = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	new1 = (char **)new char*[((count_words(s, c) + 1) * sizeof(char *))];
 	if (!new1)
 		return (NULL);
 	a = 0;
@@ -72,7 +72,7 @@ char	**parce_it(const char *s, char c)
 	while (a < count_words(s, c))
 	{
 		b = 0;
-		new1[a] = (char *)malloc(sizeof_words(s, c) + 1);
+		new1[a] = (char *)new char[(sizeof_words(s, c) + 1)];
 		if (!new1[a])
 			return (ft_free(a, new1));
 		i = ft_getindex(i, c, s);
@@ -88,10 +88,10 @@ void free_lin(char **lin, int param)
 {
     int fre = 0;
     while(lin[fre]) {
-        free(lin[fre]);
+        delete[] (lin[fre]);
         fre++;
     }
-    free(lin);
+    delete[] (lin);
     lin = NULL;
     if (fre != param)
         throw ("Error on file");
@@ -110,7 +110,7 @@ void stor_data_in_map(data &csv)
     while (std::getline(file, line))
     {
         if (rem > 0) {
-            char **lin = parce_it(line.c_str(), ',');
+            char **lin = split(line.c_str(), ',');
             csv.insert(std::pair<std::string, double>(lin[0], std::stod(std::string(lin[1]))));
             free_lin(lin, 2);
         }
@@ -120,7 +120,7 @@ void stor_data_in_map(data &csv)
 
 t_date handel_date(const char *get_date)
 {
-	char **date = parce_it(get_date, '-');
+	char **date = split(get_date, '-');
 	t_date dat;
 
  	dat.yy = atoi(date[0]);
@@ -195,7 +195,7 @@ void check_txt(char *txt, data &csv) {
     while (std::getline(file, data))
     {
         if (rem > 0) {
-			char **date = parce_it(data.c_str(), ' ');
+			char **date = split(data.c_str(), ' ');
 			dat = handel_date(date[0]);
 			if (check_valid_date(dat)) {
 				std::cout << "Error: bad input => " << std::string(date[0]) << std::endl;
