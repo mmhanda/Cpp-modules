@@ -137,7 +137,7 @@ int	check_valid_date(t_date date_input)
 	dd = date_input.dd;
 	mm = date_input.mm;
 
-    if(yy>=2009 && yy<=2022) {
+    if(yy>=2009 && yy<=9999) {
 
         if(mm>=1 && mm<=12) {
 
@@ -182,6 +182,20 @@ int check_valid_btc(char *btc, double range)
 	return (0);
 }
 
+bool check_size(char **date) {
+	
+	int  count = 0;
+	while (date[count] != NULL)
+		count ++;
+	if (count != 3)
+		return true;
+	if (std::strcmp(date[1], "|"))
+		return true;
+	if (!std::isdigit(date[2][0]))
+		return true;
+	return false;
+}
+
 void check_txt(char *txt, data &csv) {
 
     std::ifstream file(txt);
@@ -194,8 +208,16 @@ void check_txt(char *txt, data &csv) {
 	t_date dat;
     while (std::getline(file, data))
     {
+		if (rem == 0) {
+			if (std::strcmp("date | value", data.c_str()))
+				throw ("Head in File Problem");
+		}
         if (rem > 0) {
 			char **date = split(data.c_str(), ' ');
+			if (check_size(date)) {
+				std::cout << "Error: bad input => " << std::string(date[0]) << std::endl;
+				continue;
+			}
 			dat = handel_date(date[0]);
 			if (check_valid_date(dat)) {
 				std::cout << "Error: bad input => " << std::string(date[0]) << std::endl;
