@@ -137,7 +137,7 @@ int	check_valid_date(t_date date_input)
 	dd = date_input.dd;
 	mm = date_input.mm;
 
-    if(yy>=1 && yy<=9999) {
+    if(yy>=2009 && yy<=2022) {
 
         if(mm>=1 && mm<=12) {
 
