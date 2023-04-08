@@ -26,29 +26,29 @@ int main(int ac, char **av) {
         for (size_t i = 0; i < numbers_v.size(); i++)
             std::cout << numbers_v.at(i) << " ";
         std::cout << std::endl;
-
         timeval befor_v, after_v, befor_d, after_d;
 
         gettimeofday(&befor_v, NULL);
         merge_sort_v(numbers_v);
         gettimeofday(&after_v, NULL);
-        std::cout << "Time to process a range of  " << numbers_v.size()
-                << " elements with std::[vector] : "
-                << ((after_v.tv_sec - befor_v.tv_sec) * 1000000.0)
-                + (after_v.tv_usec - befor_v.tv_usec) << " us" << std::endl;
-
-        gettimeofday(&befor_d, NULL);
-        merge_sort_d(numbers_d);
-        gettimeofday(&after_d, NULL);
-        std::cout << "Time to process a range of  " << numbers_d.size()
-                << " elements with std::[deque]  : "
-                << ((after_d.tv_sec - befor_d.tv_sec) * 1000000.0)
-                + (after_d.tv_usec - befor_d.tv_usec) << " us" << std::endl;
 
         std::cout << "After:  ";
-        for (size_t i = 0; i < numbers_d.size(); i++)
-            std::cout << numbers_d.at(i) << " ";
+        for (size_t i = 0; i < numbers_v.size(); i++)
+            std::cout << numbers_v.at(i) << " ";
         std::cout << std::endl;
+
+        std::cout << "Time to process a range of  " << numbers_v.size()
+                << " elements with std::[vector] : "
+                << ((((after_v.tv_sec - befor_v.tv_sec) * 1000000.0)
+                + (after_v.tv_usec - befor_v.tv_usec)) / 1000) << " us" << std::endl;
+
+        gettimeofday(&befor_d, NULL);
+        std::deque<int> numbers_dd = merge_sort_d(numbers_d);
+        gettimeofday(&after_d, NULL);
+        std::cout << "Time to process a range of  " << numbers_dd.size()
+                << " elements with std::[deque]  : "
+                << ((((after_d.tv_sec - befor_d.tv_sec) * 1000000.0)
+                + (after_d.tv_usec - befor_d.tv_usec)) / 1000) << " us" << std::endl;
     }
     catch(const std::exception &e)
     {
