@@ -123,6 +123,12 @@ t_date handel_date(const char *get_date)
 	char **date = split(get_date, '-');
 	t_date dat;
 
+	if (!date[0] || !date[1] || !date[2]) {
+		dat.yy = 0;
+		dat.mm = 0;
+		dat.dd = 0;
+		return (dat);
+	}
  	dat.yy = atoi(date[0]);
 	dat.mm = atoi(date[1]);
 	dat.dd = atoi(date[2]);
@@ -189,10 +195,25 @@ bool check_size(char **date) {
 		count ++;
 	if (count != 3)
 		return true;
-	if (std::strcmp(date[1], "|"))
+	else if (std::strcmp(date[1], "|"))
 		return true;
-	if (!std::isdigit(date[2][0]))
+	else if (!std::isdigit(date[2][0]))
 		return true;
+	else {
+		count = 0;
+		int count_ = 0;
+		while (date[count]) {
+			int tmp = 0;
+			while (date[count][tmp]) {
+				if (date[count][tmp] == '-')
+					count_++;
+				tmp++;
+			}
+			count ++;
+		}
+		if (count_ != 2)
+			return true;
+	}
 	return false;
 }
 
