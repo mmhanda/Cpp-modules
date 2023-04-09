@@ -134,7 +134,7 @@ t_date handel_date(const char *get_date)
 	dat.dd = atoi(date[2]);
 	return (dat);
 }
- 
+
 int	check_valid_date(t_date date_input)
 {
     int yy, mm, dd;

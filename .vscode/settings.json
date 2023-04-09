@@ -61,7 +61,11 @@
         "__functional_base_03": "cpp",
         "vector": "cpp",
         "list": "cpp",
-        "__cxx_version": "cpp"
+        "__cxx_version": "cpp",
+        "__node_handle": "cpp",
+        "__tree": "cpp",
+        "map": "cpp",
+        "optional": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
