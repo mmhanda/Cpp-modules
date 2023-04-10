@@ -129,9 +129,9 @@ t_date handel_date(const char *get_date)
 		dat.dd = 0;
 		return (dat);
 	}
- 	dat.yy = atoi(date[0]);
-	dat.mm = atoi(date[1]);
-	dat.dd = atoi(date[2]);
+ 	dat.yy = std::stod(date[0]);
+	dat.mm = std::stod(date[1]);
+	dat.dd = std::stod(date[2]);
 	return (dat);
 }
 
@@ -166,7 +166,6 @@ int	check_valid_date(t_date date_input)
     }
     else
 		return (1);
-
     return 0;
 }
 
@@ -193,18 +192,30 @@ bool check_size(char **date) {
 	int  count = 0;
 	while (date[count] != NULL)
 		count ++;
-	if (count != 3)
+	if (std::strlen(date[0]) != 10)
+		return true;
+	else if (count != 3)
 		return true;
 	else if (std::strcmp(date[1], "|"))
 		return true;
-	else if (!std::isdigit(date[2][0]))
+	else if (date[2][0] != '-' && !std::isdigit(date[2][0]))
 		return true;
+	else if (date[2][0] != '-' && std::isdigit(date[2][0])) {
+		int tmp = 0;
+		while(date[2][tmp])
+		{
+			if (date[2][tmp] != '.')
+				if (!std::isdigit(date[2][tmp]))
+					return (true);
+			tmp++;
+		}
+	}
 	else {
 		count = 0;
 		int count_ = 0;
 		while (date[count]) {
 			int tmp = 0;
-			while (date[count][tmp]) {
+			while (date[count][tmp] && count != 2) {
 				if (date[count][tmp] == '-')
 					count_++;
 				tmp++;

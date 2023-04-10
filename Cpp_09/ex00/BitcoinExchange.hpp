@@ -6,9 +6,9 @@
 
 typedef struct s_date 
 {
-    int dd;
-    int yy;
-    int mm;
+    double dd;
+    double yy;
+    double mm;
 } t_date;
 
 typedef std::map<std::string, double>  data;
